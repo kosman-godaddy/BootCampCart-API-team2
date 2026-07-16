@@ -9,6 +9,7 @@ from playhouse.postgres_ext import (
     Model,
     AutoField,
     CharField,
+    TextField,
     DoubleField,
     BooleanField,
     IntegerField,
@@ -94,6 +95,17 @@ class DatabaseCartItem(BaseModel):
     name = CharField()
     price = DoubleField()
     quantity = IntegerField()
+
+
+class DatabaseOrder(BaseModel):
+    id = AutoField(primary_key=True)
+    name = CharField()
+    email = CharField()
+    phone = CharField()
+    payment = CharField()
+    total = DoubleField()
+    items = TextField(default='[]')
+    created_at = CharField()
 
 
 # BOOTCAMPERS: Don't modify anything below
