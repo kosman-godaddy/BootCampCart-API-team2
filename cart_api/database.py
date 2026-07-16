@@ -87,7 +87,7 @@ class DatabaseProducts(BaseModel):
                 description="Warning: may cause overwhelming joy. Glazed to perfection, these Donuts will make your Do'main experience all the better.",
                 price=8.00,
                 is_on_sale=False,
-                image_url="https://pixabay.com/images/download/x-10094252_1920.jpg",
+                image_url="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=200&fit=crop",
             ),
             DatabaseProducts(
                 id=7,
@@ -96,7 +96,7 @@ class DatabaseProducts(BaseModel):
                 price=300000.00,
                 is_on_sale=True,
                 sale_price=100.00,
-                image_url="https://pixabay.com/images/download/x-4815249_1920.jpg",
+                image_url="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=400&h=200&fit=crop",
             ),
             DatabaseProducts(
                 id=8,
@@ -105,7 +105,7 @@ class DatabaseProducts(BaseModel):
                 price=15.00,
                 is_on_sale=True,
                 sale_price=0.00,
-                image_url="https://pixabay.com/images/download/x-7323694_1920.jpg",
+                image_url="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=200&fit=crop",
             ),
         ]
         DatabaseProducts.bulk_create(products)
