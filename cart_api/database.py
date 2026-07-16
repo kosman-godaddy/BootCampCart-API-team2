@@ -81,6 +81,32 @@ class DatabaseProducts(BaseModel):
                 is_on_sale=True,
                 sale_price=4.99,
             ),
+            DatabaseProducts(
+                id=6,
+                name="Donuts",
+                description="Warning: may cause overwhelming joy. Glazed to perfection, these Donuts will make your Do'main experience all the better.",
+                price=8.00,
+                is_on_sale=False,
+                image_url="https://pixabay.com/images/download/x-10094252_1920.jpg",
+            ),
+            DatabaseProducts(
+                id=7,
+                name="Lambo",
+                description="I know your sick of Ubering from the Hotel to the Office, why not just skip the wait!",
+                price=300000.00,
+                is_on_sale=True,
+                sale_price=100.00,
+                image_url="https://pixabay.com/images/download/x-4815249_1920.jpg",
+            ),
+            DatabaseProducts(
+                id=8,
+                name="In-N-Out",
+                description="🚨 LIMITED TIME OFFER 🚨\nFREE In-N-Out, Courtesy of Austin & Suzeth",
+                price=15.00,
+                is_on_sale=True,
+                sale_price=0.00,
+                image_url="https://pixabay.com/images/download/x-7323694_1920.jpg",
+            ),
         ]
         DatabaseProducts.bulk_create(products)
 
