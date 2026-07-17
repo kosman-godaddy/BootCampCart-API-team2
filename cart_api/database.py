@@ -40,6 +40,7 @@ class DatabaseProducts(BaseModel):
     is_on_sale = BooleanField(default=False)
     sale_price = DoubleField(null=True)
     stock = IntegerField(default=5)
+    rating = DoubleField(null=True)
 
     @classmethod
     def prepopulate(cls):  # pragma: nocover
