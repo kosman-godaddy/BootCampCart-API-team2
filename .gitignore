@@ -102,3 +102,6 @@ ENV/
 
 # Custom Stuff
 .postgressdb/data
+
+# Local dev notes (not for version control)
+SWAGGER_NOTES.md

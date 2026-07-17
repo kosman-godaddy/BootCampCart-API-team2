@@ -28,10 +28,22 @@ api.add_route("/v1/cartitems/{cart_item_id:int}", cartitem)
 api.add_route("/v1/orders", orders)
 api.add_route("/v1/orders/{order_id:int}", order)
 
-# Add a route which serves our OpenAPI specification
-falcon_api_doc(
-    api, config_path="/swagger/api.json", url_prefix="/", title="Cart API", editor=True
+# swagger_ui_py 0.3.0 always registers its index at url_prefix + "/" (trailing slash).
+# Falcon's strip_url_path_trailing_slash=True strips that slash before routing, making
+# the library's own /docs/ route unreachable. Workaround: store the returned interface
+# object and register /docs (no trailing slash) ourselves. -Ian
+_swagger = falcon_api_doc(
+    api, config_path="/swagger/api.json", url_prefix="/docs", title="Cart API", editor=True
 )
+
+
+class _SwaggerDocs:
+    def on_get(self, req, resp):
+        resp.content_type = "text/html"
+        resp.text = _swagger.doc_html
+
+
+api.add_route("/docs", _SwaggerDocs())
 
 
 # Add custom error handling
