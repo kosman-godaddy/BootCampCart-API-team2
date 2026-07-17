@@ -90,7 +90,7 @@ class DatabaseProducts(BaseModel):
             DatabaseProducts(
                 id=6,
                 name="Donuts",
-                description="Warning: may cause overwhelming joy. Glazed to perfection, these Donuts will make your Do'main experience all the better.",
+                description="Made with love, these are the best donuts in tempe",
                 price=8.00,
                 is_on_sale=False,
                 image_url="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=200&fit=crop",
@@ -99,7 +99,7 @@ class DatabaseProducts(BaseModel):
             DatabaseProducts(
                 id=7,
                 name="Lambo",
-                description="I know your sick of Ubering from the Hotel to the Office, why not just skip the wait!",
+                description="Drive to the office in style",
                 price=300000.00,
                 is_on_sale=True,
                 sale_price=100.00,
@@ -109,7 +109,7 @@ class DatabaseProducts(BaseModel):
             DatabaseProducts(
                 id=8,
                 name="In-N-Out",
-                description="🚨 LIMITED TIME OFFER 🚨\nFREE In-N-Out, Courtesy of Austin & Suzeth",
+                description="🚨 LIMITED TIME OFFER 🚨",
                 price=15.00,
                 is_on_sale=True,
                 sale_price=0.00,
