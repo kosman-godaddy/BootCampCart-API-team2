@@ -10,8 +10,8 @@ class Product:
         resp.status = falcon.HTTP_200
 
     def on_patch(self, req, resp, product_id):
-        data = req.media
         product = DatabaseProducts.get(id=product_id)
+        data = req.media
         for field, value in data.items():
             setattr(product, field, value)
         product.save()
