@@ -31,7 +31,7 @@ class Product:
 
 class Products:
     def on_get(self, req, resp):
-        products = DatabaseProducts.select()
+        products = DatabaseProducts.select().order_by(DatabaseProducts.id)
         resp.media = [model_to_dict(product) for product in products]
         resp.status = falcon.HTTP_200
 
