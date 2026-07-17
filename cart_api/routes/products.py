@@ -9,6 +9,15 @@ class Product:
         resp.media = model_to_dict(product)
         resp.status = falcon.HTTP_200
 
+    def on_patch(self, req, resp, product_id):
+        data = req.media
+        product = DatabaseProducts.get(id=product_id)
+        for field, value in data.items():
+            setattr(product, field, value)
+        product.save()
+        resp.media = model_to_dict(product)
+        resp.status = falcon.HTTP_200
+
     def on_delete(self, req, resp, product_id):
         DatabaseProducts.delete_by_id(product_id)
         resp.status = falcon.HTTP_204
