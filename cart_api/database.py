@@ -39,6 +39,7 @@ class DatabaseProducts(BaseModel):
     price = DoubleField()
     is_on_sale = BooleanField(default=False)
     sale_price = DoubleField(null=True)
+    stock = IntegerField(default=5)
 
     @classmethod
     def prepopulate(cls):  # pragma: nocover
@@ -50,6 +51,7 @@ class DatabaseProducts(BaseModel):
                 price=14.99,
                 is_on_sale=False,
                 sale_price=8.99,
+                stock=5,
             ),
             DatabaseProducts(
                 id=2,
@@ -58,6 +60,7 @@ class DatabaseProducts(BaseModel):
                 price=29.99,
                 is_on_sale=True,
                 sale_price=19.99,
+                stock=5,
             ),
             DatabaseProducts(
                 id=3,
@@ -65,6 +68,7 @@ class DatabaseProducts(BaseModel):
                 description="Purchase a .com domain",
                 price=9.99,
                 is_on_sale=False,
+                stock=5,
             ),
             DatabaseProducts(
                 id=4,
@@ -72,6 +76,7 @@ class DatabaseProducts(BaseModel):
                 description="Purchase a .org domain",
                 price=8.99,
                 is_on_sale=False,
+                stock=5,
             ),
             DatabaseProducts(
                 id=5,
@@ -80,6 +85,7 @@ class DatabaseProducts(BaseModel):
                 price=8.99,
                 is_on_sale=True,
                 sale_price=4.99,
+                stock=5,
             ),
             DatabaseProducts(
                 id=6,
@@ -88,6 +94,7 @@ class DatabaseProducts(BaseModel):
                 price=8.00,
                 is_on_sale=False,
                 image_url="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=200&fit=crop",
+                stock=5,
             ),
             DatabaseProducts(
                 id=7,
@@ -97,6 +104,7 @@ class DatabaseProducts(BaseModel):
                 is_on_sale=True,
                 sale_price=100.00,
                 image_url="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=400&h=200&fit=crop",
+                stock=5,
             ),
             DatabaseProducts(
                 id=8,
@@ -106,6 +114,7 @@ class DatabaseProducts(BaseModel):
                 is_on_sale=True,
                 sale_price=0.00,
                 image_url="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=200&fit=crop",
+                stock=5,
             ),
         ]
         DatabaseProducts.bulk_create(products)
